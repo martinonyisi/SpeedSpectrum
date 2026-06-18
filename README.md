@@ -346,7 +346,7 @@ Brand: Tech With Martony
 
 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the Apache License.
 
 You are free to:
 
