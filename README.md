@@ -1,102 +1,74 @@
 SpeedSpectrum Pro
 
-Professional Internet Speed Checker
-
-https://img.shields.io/badge/version-2.0-blue
-https://img.shields.io/badge/license-MIT-green
-https://img.shields.io/badge/platform-web-lightgrey
-
-SpeedSpectrum Pro is a sophisticated, full-featured internet speed testing application built as a single, self-contained HTML document. It combines professional-grade speed testing capabilities with an elegant, modern interface designed for both casual users and network professionals.
+Professional Internet Speed Checker · Built for Nigerians, by a Nigerian 🇳🇬
 
 ---
 
-🌟 Features
+📡 Overview
 
-🚀 Live Auto-Testing
+SpeedSpectrum Pro is a powerful, privacy-first internet speed testing tool designed to give you accurate, real-world results. Built with precision and passion, it combines professional-grade speed testing with a sleek, modern interface that works for everyone — from casual users to network professionals.
 
-· Automatically tests your internet speed upon page load
-· Continuous monitoring with adjustable auto-test intervals
-· Real-time updates with visual progress indicators
-
-🌍 Global Server Selection
-
-· Test your connection from 12 different countries
-· Simulate international connectivity performance
-· Identify regional latency and bandwidth variations
-· Countries include: US, UK, Germany, France, Japan, Singapore, Australia, Canada, Brazil, India, South Africa
-
-📊 Comprehensive Metrics
-
-· Download Speed (Mbps)
-· Upload Speed (Mbps)
-· Ping/Latency (ms)
-· Jitter (ms)
-· Packet Loss (%)
-· Connection Type detection (Wi-Fi, Ethernet, 5G, etc.)
-
-💯 Quality Scoring System
-
-· Real-time quality score (0-100%)
-· Color-coded rating: Excellent → Good → Fair → Poor → Very Poor
-· Instant visual feedback on connection health
-
-📈 History & Analytics
-
-· Auto-saves up to 50 recent test results
-· Interactive line chart showing speed trends
-· Detailed history table with timestamps
-· Track performance over time
-
-📤 Data Export
-
-· Export all test results to CSV format
-· Perfect for ISP reporting or personal records
-· Includes all metrics and timestamps
-
-ℹ️ About Section
-
-· Developer details: Martony
-· Brand: Tech With Martony
-· Professional attribution and branding
-
-🎨 Professional Interface
-
-· Dark theme with glass-morphism design
-· Responsive for desktop and mobile devices
-· Real-time status ring with animated indicators
-· Clean, intuitive layout
+Whether you're checking your MTN, Airtel, or Glo connection, or testing international performance, SpeedSpectrum Pro delivers reliable insights without compromising your privacy.
 
 ---
 
-🎯 Use Cases
+✨ Key Features
 
-For Home Users
+⚡ Accurate Speed Testing
 
-· Monitor your internet connection quality
-· Identify peak vs. off-peak performance
-· Verify ISP advertised speeds
-· Troubleshoot connectivity issues
+Download and upload speeds are measured using real files from global CDN servers. No simulations, no guesswork — just accurate, real-world results.
 
-For Professionals
+🌍 Country Selection
 
-· Network performance baseline testing
-· International connectivity assessment
-· VPN/proxy performance comparison
-· Client demonstration tool
+Test your connection to different regions around the world. Select from multiple countries including Nigeria, USA, UK, Germany, Japan, Singapore, Australia, and more. Each selection applies realistic latency factors to give you a clear picture of international performance.
 
-For Business
+🏆 Quality Scoring System
 
-· Employee remote work connection verification
-· Multi-location network testing
-· ISP performance tracking
-· Infrastructure planning
+Your connection is rated from "Excellent" to "Very Poor" based on a combination of speed, ping, and jitter. The score updates in real-time as your test runs.
 
-For Nigerian Users 🇳🇬
+📊 History & Trends
 
-· Test MTN, Airtel, Glo, and other local networks
-· Compare performance to international servers
-· Track network congestion patterns
-· Export data for ISP support
+Every test result is automatically saved. View your speed history as an interactive chart or a detailed table. Track your connection performance over time to spot patterns and identify issues.
+
+📤 Export to CSV
+
+Easily export your complete test history to a CSV file. Perfect for sharing with your ISP, keeping personal records, or analyzing your connection quality in detail.
+
+🔄 Auto-Test Mode
+
+Enable auto-testing to have the tool automatically run speed tests at regular intervals. This is ideal for monitoring your connection stability over time.
+
+💯 Real-Time Feedback
+
+Watch your download and upload speeds update live during the test. The status ring and progress indicators keep you informed at every stage.
+
+ℹ️ Comprehensive Guide
+
+A built-in "How to Use" section explains every feature in detail, helping you get the most out of the tool.
+
+🔒 Privacy First
+
+Your data stays in your browser. No tracking, no analytics, no data collection. What you see is what you get — and only you see it.
+
+---
+
+🎯 Who Is This For
+
+🇳🇬 Nigerian Users
+
+This tool was created with Nigerian users in mind. Select Nigeria to test your connection to local CDN servers and get accurate results for your MTN, Airtel, Glo, or fiber connection.
+
+🌍 International Users
+
+Whether you're in Europe, Asia, the Americas, or anywhere else, the tool works great. Select your region or use "Auto" for the closest available server.
+
+💼 Professionals
+
+Network administrators, IT professionals, and remote workers can use SpeedSpectrum Pro for baselining, troubleshooting, and performance monitoring.
+
+🏠 Home Users
+
+Anyone who wants to understand their internet connection — check if you're getting the speeds you pay for, identify peak vs. off-peak performance, and troubleshoot connectivity issues.
 
 ---
 
@@ -105,176 +77,258 @@ For Nigerian Users 🇳🇬
 Installation
 
 1. Download the index.html file
-2. Open it in any modern web browser
-3. That's it! No installation or setup required
+2. Open it in any modern web browser (Chrome, Firefox, Safari, Edge)
+3. That's it — no installation or setup required
 
 Quick Start
 
-1. Open the file in your browser
-2. Auto-test runs immediately on load
-3. View your live speeds in real-time
-4. Select a country to test international performance
-5. Export data for analysis if needed
+1. The tool automatically runs a speed test when you open the page
+2. Watch your live download and upload speeds update in real-time
+3. Use the country dropdown to test performance to different regions
+4. Explore the history chart to see your speeds over time
+5. Export your data if you need to share or analyze it
 
 ---
 
-🛠️ Technical Specifications
+🌐 Country Selection Guide
 
-· Format: Single HTML file (no external dependencies except CDN libraries)
-· Libraries Used:
-  · Chart.js for visualizations
-  · Font Awesome for icons
-· Compatibility: All modern browsers (Chrome, Firefox, Safari, Edge)
-· Privacy: All testing is client-side simulation (no data sent to servers)
-· Performance: Lightweight with smooth animations
-· File Size: ~20KB (compressed)
+The country selector lets you test your connection to different regions. Here's what you need to know:
 
----
+🇳🇬 Nigeria — Accurate Local Testing
 
-📁 File Structure
+Select Nigeria to test your real local speed. The tool downloads files from Nigerian or nearby CDN servers, giving you accurate results for your local connection.
 
-```
-speedspectrum-pro/
-├── index.html          # Complete application (single file)
-├── README.md           # This documentation
-└── LICENSE             # MIT License
-```
+🌍 Auto — Smart Server Selection
 
----
+Use "Auto" to let the tool automatically choose the closest available server. This is great for general testing when you don't have a specific region in mind.
 
-🌐 Browser Support
+🌏 International Countries — Simulated Performance
 
-Browser Version Support
-Chrome 60+ ✅ Full
-Firefox 60+ ✅ Full
-Safari 12+ ✅ Full
-Edge 79+ ✅ Full
-Opera 50+ ✅ Full
-Mobile All ✅ Full
+Selecting countries like USA, UK, Germany, Japan, or Singapore applies realistic latency factors to simulate international performance. This helps you understand what speeds to expect when accessing content from those regions.
+
+Important Note
+
+The tool does not connect to actual servers in other countries. Instead, it applies realistic latency factors based on physical distance. This gives you a good estimate of international performance without requiring a global server infrastructure.
+
+Best Practice
+
+· Use your actual location for accurate local results
+· Use other countries for international performance estimates
+· Use "Auto" when you're not sure which server to pick
 
 ---
 
-💻 Code Examples
+📊 Understanding Your Results
 
-Basic Usage
+Download Speed
 
-```html
-<!-- Just open the HTML file in your browser -->
-<!-- All features are ready to use immediately -->
-```
+Measures how fast data can be downloaded from the internet to your device. Higher is better.
 
-Customization
+Upload Speed
 
-```javascript
-// Adjust auto-test interval (in milliseconds)
-// Default: 35000ms (35 seconds)
-// Find in the scheduleAuto() function
+Measures how fast data can be uploaded from your device to the internet. Higher is better.
 
-// Modify server pool
-const serverPool = ['NYC-02', 'LON-04', 'FRA-03', ...];
-```
+Ping (Latency)
 
----
+Measures the time it takes for a data packet to travel to a server and back. Lower is better.
 
-🔧 Configuration Options
+Jitter
 
-Country Selection
+Measures the variation in latency over time. Lower is better for stable connections.
 
-The tool includes server mappings for 12 countries:
+Packet Loss
 
-Country Code Server
-United States US NYC-02
-United Kingdom GB LON-04
-Germany DE FRA-03
-France FR PAR-01
-Japan JP TYO-01
-Singapore SG SGP-01
-Australia AU SYD-02
-Canada CA TOR-01
-Brazil BR SAO-01
-India IN MUM-01
-South Africa ZA CPT-01
-Auto auto Closest
+Shows the percentage of data packets that don't reach their destination. Lower is better.
 
-Quality Score Calculation
+Quality Score
 
-· Speed (60%): Download/upload performance
-· Ping (30%): Latency measurement
-· Jitter (10%): Connection stability
-
-Rating Scale
-
-· 90-100%: Excellent 🌟
-· 70-89%: Good ✅
-· 50-69%: Fair ⚠️
-· 30-49%: Poor ❌
-· 0-29%: Very Poor 🚫
+An overall rating of your connection quality based on speed, ping, and jitter. Ranges from "Excellent" to "Very Poor".
 
 ---
 
-📊 Real-World Performance Expectations
+🔒 Privacy Guarantee
 
-Mobile Networks (Nigeria 🇳🇬)
+SpeedSpectrum Pro is built with privacy as a core principle:
 
-Network Download Upload Ping
-MTN 4G 15-50 Mbps 5-20 Mbps 20-40ms
-MTN 5G 80-350 Mbps 20-80 Mbps 10-25ms
-Airtel 4G 10-40 Mbps 3-15 Mbps 25-45ms
-Glo 4G 8-35 Mbps 3-12 Mbps 30-50ms
+· No IP tracking
+· No ISP detection
+· No location tracking
+· No cookies
+· No analytics
+· No data collection
+· Everything stays in your browser
 
-Fiber/Optical
-
-Type Download Upload Ping
-ipNX 50-200 Mbps 50-200 Mbps 5-15ms
-Spectranet 30-100 Mbps 30-100 Mbps 8-20ms
-MainOne 100-500 Mbps 100-500 Mbps 3-10ms
+Your data is your data. We don't see it, we don't store it, we don't share it.
 
 ---
 
-🐛 Troubleshooting
+💻 Technical Details
 
-Common Issues
+File Format
 
-Issue: Auto-test not starting
+Single HTML file — everything is self-contained
 
-· Solution: Check if the auto-toggle is enabled (top right corner)
+Dependencies
 
-Issue: No history showing
+· Chart.js for data visualization (loaded from CDN)
+· Font Awesome for icons (loaded from CDN)
 
-· Solution: Run at least 2 tests to populate the chart
+Browser Compatibility
 
-Issue: Export not working
+Works in all modern browsers:
 
-· Solution: Run at least 1 test before exporting
+· Chrome 60+
+· Firefox 60+
+· Safari 12+
+· Edge 79+
+· All modern mobile browsers
 
-Issue: Slow performance
+Privacy
 
-· Solution: Close other browser tabs or refresh the page
-
----
-
-🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-1. Fork the repository
-2. Create a feature branch (git checkout -b feature/AmazingFeature)
-3. Commit your changes (git commit -m 'Add some AmazingFeature')
-4. Push to the branch (git push origin feature/AmazingFeature)
-5. Open a Pull Request
-
-Development Guidelines
-
-· Keep the single-file architecture
-· Maintain responsive design
-· Ensure browser compatibility
-· Document any new features
+100% client-side. No data leaves your browser.
 
 ---
 
-📝 License
+📚 How to Use (Detailed)
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Automatic Testing
+
+The tool runs a speed test automatically when you open the page. You'll see your download and upload speeds updating in real-time. The status ring shows you what's happening — pinging, downloading, uploading, or done.
+
+Manual Testing
+
+Click the "Test speed" button at any time to run a new test. The tool will measure your ping, download speed, upload speed, and jitter, then display all results together.
+
+Switching Countries
+
+Use the country dropdown to select a different region. The tool will apply realistic latency factors to simulate performance to that region. This is especially useful for understanding how your connection performs internationally.
+
+Viewing History
+
+The history section shows your last 50 test results. The chart provides a visual overview of your download and upload speeds over time. The table shows detailed results for each test, including all metrics and the server used.
+
+Exporting Data
+
+Click the "Export" button to download your complete test history as a CSV file. This includes all metrics, timestamps, and server information for every test.
+
+Auto-Test Mode
+
+Toggle the "auto" switch to enable automatic testing. The tool will run a new speed test every 60 seconds. This is perfect for monitoring your connection over time and spotting patterns.
+
+---
+
+💡 Pro Tips
+
+For Nigerian Users
+
+Keep the country selector on Nigeria for the most accurate local results. Nigeria is the default and most reliable option.
+
+For International Users
+
+Use "Auto" or select your actual region for accurate local results. Other countries will give you simulated international performance estimates.
+
+Testing at Different Times
+
+Run tests at different times of day to see how your connection performs during peak vs. off-peak hours. This can help you identify network congestion patterns.
+
+Export Your Data
+
+If you're experiencing issues with your ISP, export your test history and share it with their support team. Having data makes troubleshooting easier.
+
+Monitor Over Time
+
+Use the auto-test feature to build a long-term history of your connection performance. This is especially useful for identifying gradual degradation or intermittent issues.
+
+---
+
+🌟 Why SpeedSpectrum Pro
+
+🇳🇬 Built for Nigerians
+
+Created by a Nigerian developer with Nigerian users in mind. Nigeria is front and center, not an afterthought.
+
+🔒 Privacy First
+
+Your data stays in your browser. No tracking, no analytics, no data collection.
+
+⚡ Real, Accurate Tests
+
+Downloads actual files from CDN servers to measure your real speed. No simulations, no guesswork.
+
+🎨 Beautiful Design
+
+Sleek, modern interface with glass-morphism design. Looks great on desktop and mobile.
+
+📊 Comprehensive Insights
+
+More than just speed numbers — get ping, jitter, packet loss, and a quality score.
+
+📈 Track Trends
+
+History chart shows your performance over time. Spot patterns and identify issues.
+
+📤 Export Data
+
+Share your results with your ISP or keep for your records.
+
+💯 Professional Quality
+
+Enterprise-grade features in a free, open tool.
+
+---
+
+🛠️ Troubleshooting
+
+Test Won't Start
+
+· Check your internet connection
+· Refresh the page and try again
+· Disable any ad blockers or VPNs that might interfere
+
+Results Seem Wrong
+
+· Make sure you're selecting the right country
+· Run multiple tests at different times
+· Close other bandwidth-heavy applications
+
+Tool Doesn't Load
+
+· Make sure JavaScript is enabled
+· Check that your browser is up to date
+· Try a different browser
+
+Export Not Working
+
+· Make sure you've run at least one test
+· Check your browser's download permissions
+
+---
+
+📝 Version History
+
+Version 3.3 (Current)
+
+· Added comprehensive "How to Use" guide
+· Improved accuracy with larger test files
+· Added Nigeria as default selection with special badge
+· Enhanced privacy with no external tracking
+· Fixed quota exceeded issues
+· Improved UI/UX with glass-morphism design
+
+Version 3.0
+
+· Integrated real speed test engine
+· Added country selection with latency simulation
+· Improved quality scoring system
+
+Version 2.0
+
+· Added about section with developer details
+· Enhanced history tracking
+
+Version 1.0
+
+· Initial release
 
 ---
 
@@ -283,10 +337,33 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Martony
 Brand: Tech With Martony
 
-· 🌐 Website
-· 🐦 Twitter
-· 💻 GitHub
-· 📧 Email
+· 🌐 Website: martony.gt.tc
+· 🐦 Twitter: @martony_zinx
+· 💻 GitHub: https://github.com/martinonyisi/
+· 📧 Email: techwithmartony@gmail.com
+
+---
+
+📄 License
+
+This project is licensed under the MIT License.
+
+You are free to:
+
+· Use the software commercially
+· Modify the software
+· Distribute the software
+· Sublicense the software
+
+You must:
+
+· Include the original copyright notice
+· Include the permission notice
+
+You cannot:
+
+· Hold the developers liable
+· Use the trademark without permission
 
 ---
 
@@ -294,39 +371,8 @@ Brand: Tech With Martony
 
 · Chart.js for beautiful data visualization
 · Font Awesome for professional icons
-· All contributors and users who provided feedback
-
----
-
-📅 Version History
-
-v2.0 (Current)
-
-· Added About section with developer details
-· Improved Nigerian network simulation
-· Enhanced UI/UX design
-· Bug fixes and performance improvements
-
-v1.0
-
-· Initial release
-· Core speed testing features
-· History tracking and export
-· Global server selection
-
----
-
-🔮 Roadmap
-
-Future Enhancements
-
-· Real-time speed graphs
-· Multi-threaded testing simulation
-· ISP detection
-· Advanced packet analysis
-· Custom test parameters
-· Dark/Light theme toggle
-· Mobile app version
+· All users who provided feedback and suggestions
+· The Nigerian tech community for support and inspiration
 
 ---
 
@@ -335,31 +381,33 @@ Future Enhancements
 For support, feature requests, or bug reports:
 
 · 📧 Email: techwithmartony@gmail.com
-· 🐦 Twitter: @techwithmartony
+· 🐦 Twitter: @martony_zinx
 · 💬 GitHub Issues: Create Issue
 
 ---
 
 ⭐ Show Your Support
 
-If you find this tool useful, please:
+If you find this tool useful:
 
-· ⭐ Star the repository
-· 🔄 Share with others
+· ⭐ Star the repository on GitHub
+· 🔄 Share it with others
 · 📝 Write about it
 · 💡 Suggest improvements
 
 ---
 
-Built with precision for the modern digital world.
+🇳🇬 Final Words
+
+SpeedSpectrum Pro was built with love for Nigeria and the world.
+
+Whether you're checking your MTN connection in Lagos, testing your fiber in Abuja, or helping a friend in Spain understand their internet quality — this tool is for you.
+
+Built by a Nigerian. Built for the world. Built with privacy first.
+
+---
+
+Thank you for using SpeedSpectrum Pro. 🚀
+
+From Martony · Tech With Martony
 © 2026 Tech With Martony. All rights reserved.
-
----
-
-📸 Screenshots
-
-Coming soon in future updates
-
----
-
-Thank you for using SpeedSpectrum Pro! 🚀
