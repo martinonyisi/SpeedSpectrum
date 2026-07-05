@@ -892,7 +892,7 @@
                 SpeedSpectrum Pro is a professional internet speed testing tool built with precision and passion.
                 🇳🇬 Proudly built for Nigerians, by a Nigerian.
             </div>
-            <div class="version">Version 4.0 · With IP & Theme Toggle</div>
+            <div class="version">Version 4.1 · Live History Updates</div>
             <div class="social-links">
                 <a href="https://github.com/martinonyisi" title="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://x.com/martony_zinx?s=21" title="Twitter"><i class="fab fa-twitter"></i></a>
@@ -948,6 +948,7 @@
                 <li><strong>Packet Loss</strong> — Shows the percentage of data packets lost</li>
                 <li><strong>IP Address Display</strong> — Shows your public IP and ISP (no data stored)</li>
                 <li><strong>Dark/Light Mode</strong> — Toggle between themes for comfortable viewing</li>
+                <li><strong>Live History Updates</strong> — Every 10-second update is automatically saved to history</li>
             </ul>
             <div class="note-box">
                 <strong>🇳🇬 Built for Nigerians:</strong> This tool was created by a Nigerian developer (Martony) with Nigerian users in mind. Nigeria is the default and most accurate option!
@@ -1074,7 +1075,7 @@
 
     <script>
         // ============================================================
-        // SPEED TEST ENGINE + IP DETECTION + THEME TOGGLE
+        // SPEED TEST ENGINE + IP DETECTION + THEME TOGGLE + LIVE HISTORY
         // ============================================================
 
         // ----- DOM refs -----
@@ -1113,6 +1114,7 @@
         let chartInstance = null;
         let autoInterval = null;
         let liveUpdateInterval = null;
+        let liveHistoryCounter = 0;
 
         // ----- Theme Toggle -----
         function toggleTheme() {
@@ -1149,7 +1151,6 @@
             try {
                 ipAddressDisplay.innerHTML = `<span class="ip-loading"><i class="fas fa-spinner fa-pulse"></i> detecting...</span>`;
 
-                // Try Jaiho IP API first (privacy-first, no logging)
                 const response = await fetch('https://jaiho-ip.vercel.app/api/json');
                 const data = await response.json();
 
@@ -1165,7 +1166,6 @@
                     return;
                 }
 
-                // Fallback: Try ip-api.com (HTTPS version with CORS)
                 const fallbackResponse = await fetch('https://ip-api.com/json/');
                 const fallbackData = await fallbackResponse.json();
 
@@ -1298,7 +1298,8 @@
                 score: q.score,
                 timestamp: new Date().toLocaleTimeString(),
                 server: server || 'auto',
-                country: country || 'auto'
+                country: country || 'auto',
+                isLive: true // Mark as live update
             };
             history.push(entry);
             if (history.length > 50) history.shift();
@@ -1310,7 +1311,8 @@
         function renderHistory() {
             const rows = history.slice().reverse().map((e, i) => {
                 const countryFlag = countryMap[e.country]?.label || e.country || 'auto';
-                return `<tr><td>${history.length - i}</td><td>${formatMbps(e.download)}</td><td>${formatMbps(e.upload)}</td><td>${Math.round(e.ping)}</td><td>${e.score}%</td><td style="font-size:0.6rem;">${countryFlag}</td></tr>`;
+                const liveBadge = e.isLive ? ' 🔄' : '';
+                return `<tr><td>${history.length - i}${liveBadge}</td><td>${formatMbps(e.download)}</td><td>${formatMbps(e.upload)}</td><td>${Math.round(e.ping)}</td><td>${e.score}%</td><td style="font-size:0.6rem;">${countryFlag}</td></tr>`;
             }).join('');
             document.getElementById('historyBody').innerHTML = rows ||
                 '<tr><td colspan="6" style="text-align:center;color:var(--text-dim);padding:8px;">No tests yet</td></tr>';
@@ -1348,10 +1350,10 @@
         // ----- export CSV -----
         function exportCSV() {
             if (history.length === 0) { alert('No data to export. Run a test first.'); return; }
-            let csv = 'Time,Download (Mbps),Upload (Mbps),Ping (ms),Jitter (ms),Loss (%),Score (%),Server,Country\n';
+            let csv = 'Time,Download (Mbps),Upload (Mbps),Ping (ms),Jitter (ms),Loss (%),Score (%),Server,Country,Type\n';
             history.forEach(e => {
                 csv +=
-                    `${e.timestamp},${e.download.toFixed(2)},${e.upload.toFixed(2)},${e.ping.toFixed(1)},${e.jitter.toFixed(1)},${(e.loss||0).toFixed(1)},${e.score},${e.server},${e.country||'auto'}\n`;
+                    `${e.timestamp},${e.download.toFixed(2)},${e.upload.toFixed(2)},${e.ping.toFixed(1)},${e.jitter.toFixed(1)},${(e.loss||0).toFixed(1)},${e.score},${e.server},${e.country||'auto'},${e.isLive ? 'Live' : 'Manual'}\n`;
             });
             const blob = new Blob([csv], { type: 'text/csv' });
             const a = document.createElement('a');
@@ -1550,40 +1552,33 @@
         }
 
         // ============================================================
-        // LIVE AUTO-UPDATE (every 10 seconds)
+        // LIVE AUTO-UPDATE (every 10 seconds) - NOW WITH HISTORY!
         // ============================================================
         function startLiveUpdates() {
             if (liveUpdateInterval) clearInterval(liveUpdateInterval);
-
-            // Start with immediate update
             liveUpdate();
-
-            // Then update every 10 seconds
             liveUpdateInterval = setInterval(liveUpdate, 10000);
         }
 
         async function liveUpdate() {
-            // Only update if not currently running a full test
             if (isRunning) return;
 
             try {
-                // Measure ping
                 const pingMs = await measurePing();
-
-                // Estimate download speed with a quick check
                 const downloadMbps = await measureDownload();
-
-                // Estimate upload speed
                 const uploadMbps = await measureUpload();
-
-                // Calculate jitter
                 const jitterMs = await measureJitter();
 
-                // Update the display
                 const countryInfo = getSelectedCountry();
                 const serverLabel = countryInfo.label || 'auto';
+                const selectedCountry = countrySelect.value;
 
+                // Update the display
                 updateMeter(downloadMbps, uploadMbps, pingMs, jitterMs, 0.2, serverLabel);
+
+                // 🔥 KEY ADDITION: Save to history automatically!
+                liveHistoryCounter++;
+                addHistory(downloadMbps, uploadMbps, pingMs, jitterMs, 0.2, serverLabel, selectedCountry);
 
                 // Update the status indicator
                 setStatus('live', 'fa-sync fa-spin', '#6fcf97');
@@ -1645,13 +1640,9 @@
 
         // ----- init -----
         function init() {
-            // Load theme
             loadTheme();
-
-            // Detect IP
             detectIP();
 
-            // Set initial state
             setStatus('ready', 'fa-wifi', '#7f9cff');
             updateMeter(0, 0, 0, 0, 0, 'auto');
             qualityScore.textContent = '—';
@@ -1659,7 +1650,6 @@
             renderHistory();
             countryDisplay.textContent = '🇳🇬 Nigeria';
 
-            // Event listeners
             testButton.addEventListener('click', runSpeedTest);
             exportBtn.addEventListener('click', exportCSV);
             aboutBtn.addEventListener('click', openAbout);
@@ -1696,10 +1686,7 @@
                 }
             });
 
-            // Start live updates
             startLiveUpdates();
-
-            // Run initial full test
             autoRunOnLoad();
         }
 
