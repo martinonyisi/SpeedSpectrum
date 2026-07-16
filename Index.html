@@ -878,33 +878,50 @@
 </head>
 <body>
 
-    <!-- ============================================================ -->
-    <!-- ABOUT MODAL                                                    -->
-    <!-- ============================================================ -->
-    <div class="about-modal" id="aboutModal">
-        <div class="about-content">
-            <button class="close-about" id="closeAbout"><i class="fas fa-times"></i></button>
-            <div class="avatar"><i class="fas fa-code"></i></div>
-            <h2>Martony</h2>
-            <div class="brand-tag"><i class="fas fa-bolt"></i> Tech With Martony</div>
-            <div class="divider"></div>
-            <div class="desc">
-                SpeedSpectrum Pro is a professional internet speed testing tool built with precision and passion.
-                🇳🇬 Proudly built for Nigerians, by a Nigerian.
-            </div>
-            <div class="version">Version 4.1 · Live History Updates</div>
-            <div class="social-links">
-                <a href="https://github.com/martinonyisi" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://x.com/martony_zinx?s=21" title="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/martin-onyisi-a58b58270?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://youtube.com/@techwithmartony?si=c_kyoi2hJWHeghsc" title="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.facebook.com/share/14ehyfnjurs/?mibextid=wwXIfr" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            </div>
-            <div style="margin-top: 1rem; font-size: 0.6rem; color: var(--text-dim);">
-                <i class="fas fa-copyright"></i> 2026 Tech With Martony
-            </div>
-        </div>
+    <div class="about-content">
+    <button class="close-about" id="closeAbout"><i class="fas fa-times"></i></button>
+    
+    <!-- REPLACED: Avatar with real image -->
+    <div style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1rem; overflow: hidden; border: 3px solid rgba(95, 138, 255, 0.3); box-shadow: 0 8px 24px rgba(63, 114, 255, 0.3); display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #5f8aff, #3b5ddb);">
+        <img src="https://media.licdn.com/dms/image/v2/D4E03AQH-BdQPA3mdtA/profile-displayphoto-scale_200_200/B4EZz0ZLKoGwAY-/0/1773626771135?e=2147483647&v=beta&t=Tm-g6XVFXftLiaKGNyxa3Ti5Jo8g-mPQecqoopHhQ1U" 
+             alt="Martin Onyisi - Martony" 
+             style="width: 100%; height: 100%; object-fit: cover;"
+             onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-code\' style=\'font-size: 2.4rem; color: white;\'></i>'">
     </div>
+    
+    <h2>Martony</h2>
+    <div class="brand-tag"><i class="fas fa-bolt"></i> Tech With Martony</div>
+    <div class="divider"></div>
+    <div class="desc">
+        SpeedSpectrum Pro is a professional internet speed testing tool built with precision and passion.
+        🇳🇬 Proudly built for Nigerians, by a Nigerian.
+    </div>
+    
+    <!-- Powered by Husli section -->
+    <div style="margin: 0.8rem 0 0.6rem; padding: 0.6rem 1rem; background: rgba(95, 138, 255, 0.06); border-radius: 12px; border: 1px solid rgba(95, 138, 255, 0.08);">
+        <span style="color: var(--text-muted); font-size: 0.7rem; letter-spacing: 0.5px;">
+            ⚡ Powered by 
+            <a href="https://husli.online" target="_blank" rel="noopener noreferrer" 
+               style="color: #5f8aff; text-decoration: none; font-weight: 600; font-size: 0.75rem; transition: 0.2s;"
+               onmouseover="this.style.color='#8aa9ff'; this.style.textDecoration='underline';"
+               onmouseout="this.style.color='#5f8aff'; this.style.textDecoration='none';">
+                Husli
+            </a>
+        </span>
+    </div>
+    
+    <div class="version">Version 4.1 · Live History Updates</div>
+    <div class="social-links">
+        <a href="https://github.com/martinonyisi" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://x.com/martony_zinx?s=21" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/martin-onyisi-a58b58270?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://youtube.com/@techwithmartony?si=c_kyoi2hJWHeghsc" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/share/14ehyfnjurs/?mibextid=wwXIfr" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <div style="margin-top: 1rem; font-size: 0.6rem; color: var(--text-dim);">
+        <i class="fas fa-copyright"></i> 2026 Tech With Martony
+    </div>
+</div>
 
     <!-- ============================================================ -->
     <!-- HOW TO USE MODAL                                               -->
