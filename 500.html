@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>500 · Server Error — Husli</title>
+    <meta name="theme-color" content="#0F1021">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://husli.online/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://husli.online/assets/icons/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0F1021; --text: #e8e8f0;
+            --text-secondary: #b0b0c8; --primary: #8b7cf7;
+            --purple-gradient: linear-gradient(135deg, #6c5ce7, #4a3db8);
+            --radius-full: 9999px;
+            --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        [data-theme="light"] {
+            --bg: #ffffff; --text: #1a1a2e;
+            --text-secondary: #555770; --primary: #6c5ce7;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family:var(--font); background:var(--bg); color:var(--text);
+            min-height:100vh; display:flex; align-items:center; justify-content:center;
+            transition:background 0.3s, color 0.3s; position:relative; overflow:hidden;
+        }
+        body::before {
+            content:''; position:absolute; top:0; left:0; width:100%; height:100%;
+            background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(108,92,231,0.03) 2px, rgba(108,92,231,0.03) 4px);
+            animation:scanLines 8s linear infinite;
+        }
+        @keyframes scanLines {
+            0% { background-position:0 0; }
+            100% { background-position:0 100%; }
+        }
+        .error-container { position:relative; z-index:1; text-align:center; padding:48px 24px; max-width:550px; }
+        .error-icon {
+            font-size:4rem; display:block; margin-bottom:16px;
+            animation:spin 4s linear infinite;
+        }
+        @keyframes spin { 100% { transform:rotate(360deg); } }
+        .error-code {
+            font-size:8rem; font-weight:900; line-height:1;
+            background:linear-gradient(135deg, #e74c3c, #f39c12);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+            background-clip:text; margin-bottom:16px;
+            animation:pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%,100% { opacity:1; }
+            50% { opacity:0.6; }
+        }
+        .error-title { font-size:1.8rem; font-weight:800; margin-bottom:8px; }
+        .error-message { color:var(--text-secondary); margin-bottom:32px; line-height:1.6; }
+        .btn {
+            display:inline-flex; align-items:center; gap:8px; padding:14px 28px;
+            border-radius:var(--radius-full); font-weight:700; font-size:0.95rem;
+            text-decoration:none; transition:all 0.2s; background:var(--purple-gradient);
+            color:#fff; box-shadow:0 4px 20px rgba(108,92,231,0.3);
+            position:relative; overflow:hidden;
+        }
+        .btn::after {
+            content:''; position:absolute; inset:0; background:rgba(255,255,255,0.1);
+            opacity:0; transition:opacity 0.3s;
+        }
+        .btn:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(108,92,231,0.4); }
+        .btn:hover::after { opacity:1; }
+        .home-link { margin-top:24px; }
+        .home-link a { color:var(--primary); text-decoration:none; font-weight:600; transition:opacity 0.2s; }
+        .home-link a:hover { opacity:0.8; }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <span class="error-icon">⚙️</span>
+        <div class="error-code">500</div>
+        <h1 class="error-title">Internal Server Error</h1>
+        <p class="error-message">
+            Something went wrong on our end. We're working to fix it.<br>
+            Please try again later or contact support if the problem persists.
+        </p>
+        <a href="https://speed.husli.online" class="btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Try Again
+        </a>
+        <div class="home-link">
+            <a href="https://help.husli.online">Get Help</a>
+        </div>
+    </div>
+</body>
+</html>
